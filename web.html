@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AKS ENTERPRISES - Futuristic websites &amp; killer promotions for shops, businesses &amp; brands. Red &amp; black cyberpunk vibes.">
+    <title>AKS ENTERPRISES | Digital Domination Redefined</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap');
+        
+        :root {
+            --red-glow: #ff0033;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .tailwind-ready * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at center, #1a0000 0%, #000000 70%);
+        }
+        
+        .neon-text {
+            text-shadow: 
+                0 0 10px var(--red-glow),
+                0 0 20px var(--red-glow),
+                0 0 40px var(--red-glow);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 25px 50px -12px rgb(255 0 51 / 0.4);
+        }
+        
+        .futuristic-section {
+            position: relative;
+        }
+        
+        .futuristic-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff0033, transparent);
+            opacity: 0.3;
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(400%); }
+        }
+        
+        .scanline {
+            animation: scanline 4s linear infinite;
+        }
+    </style>
+</head>
+<body class="tailwind-ready bg-black text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-red-500/30">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-red-600 rounded-2xl flex items-center justify-center rotate-45">
+                    <span class="text-white text-3xl rotate-[-45deg] leading-none mt-0.5">⚡</span>
+                </div>
+                <h1 class="logo-font text-3xl tracking-[-2px] neon-text text-red-500">AKS</h1>
+                <span class="text-3xl font-bold tracking-widest text-white">ENTERPRISES</span>
+            </div>
+
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium uppercase tracking-widest">
+                <a href="#services" class="hover:text-red-500 flex items-center gap-1"><i class="fa-solid fa-rocket"></i> SERVICES</a>
+                <a href="#promotions" class="hover:text-red-500 flex items-center gap-1"><i class="fa-solid fa-bullhorn"></i> PROMO TRICKS</a>
+                <a href="#portfolio" class="hover:text-red-500 flex items-center gap-1"><i class="fa-solid fa-briefcase"></i> PORTFOLIO</a>
+                <a href="#about" class="hover:text-red-500 flex items-center gap-1"><i class="fa-solid fa-info-circle"></i> ABOUT</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" 
+                   class="px-8 py-3.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-3xl flex items-center gap-2 shadow-lg shadow-red-600/50 hover:shadow-xl hover:shadow-red-600/70">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    GET FUTURISTIC QUOTE
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-3xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-black border-t border-red-500/30 px-6 py-6">
+            <div class="flex flex-col gap-6 text-center text-lg font-medium">
+                <a href="#services" class="py-2">SERVICES</a>
+                <a href="#promotions" class="py-2">PROMO TRICKS</a>
+                <a href="#portfolio" class="py-2">PORTFOLIO</a>
+                <a href="#about" class="py-2">ABOUT US</a>
+                <a href="#contact" class="px-8 py-4 bg-red-600 rounded-3xl inline-block">GET QUOTE NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="hero-bg min-h-screen flex items-center relative pt-20">
+        <!-- Particle Canvas -->
+        <canvas id="particleCanvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+        
+        <!-- Scanline effect -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/10 to-transparent scanline opacity-30 pointer-events-none z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-6 py-2 border border-red-500/50 rounded-3xl text-red-400 text-sm font-medium tracking-widest">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                        </span>
+                        NOW IN 2026 — CYBERPUNK MODE ACTIVATED
+                    </div>
+                    
+                    <h1 class="text-7xl md:text-8xl font-bold logo-font leading-none tracking-[-4px] neon-text">
+                        WEBSITES THAT<br>SLAP.<br>PROMOTIONS THAT<br><span class="text-red-500">CONQUER.</span>
+                    </h1>
+                    
+                    <p class="text-2xl text-gray-300 max-w-lg">
+                        AKS ENTERPRISES builds jaw-dropping websites for shops &amp; businesses + deploys next-level ad campaigns and promotion schemes that actually get results.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#services" 
+                           class="group px-10 py-6 bg-red-600 hover:bg-white hover:text-red-600 text-white text-xl font-semibold rounded-3xl flex items-center gap-3 uppercase tracking-widest shadow-2xl shadow-red-600/40">
+                            SEE OUR WORK
+                            <i class="fa-solid fa-arrow-right group-hover:rotate-45 text-2xl"></i>
+                        </a>
+                        
+                        <a href="#promotions" 
+                           class="group px-10 py-6 border-2 border-red-500 hover:border-white text-red-500 hover:text-white text-xl font-semibold rounded-3xl flex items-center gap-3 uppercase tracking-widest">
+                            UNLOCK PROMO TRICKS
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-8 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-red-500 text-2xl"></i>
+                            <div>
+                                <div class="font-semibold">100+ Projects Launched</div>
+                                <div class="text-gray-400">in 2025 alone</div>
+                            </div>
+                        </div>
+                        <div class="h-12 w-px bg-red-500/30"></div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-red-500 text-2xl"></i>
+                            <div>
+                                <div class="font-semibold">4.98 Average ROI</div>
+                                <div class="text-gray-400">on every promo campaign</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right visual -->
+                <div class="relative hidden md:block">
+                    <div class="absolute -inset-10 bg-red-600/10 blur-3xl rounded-[100px] rotate-12"></div>
+                    <div class="bg-black/70 backdrop-blur-3xl border border-red-500/30 rounded-3xl p-8 relative">
+                        <div class="aspect-video bg-gradient-to-br from-red-500 to-black rounded-2xl flex items-center justify-center overflow-hidden">
+                            <div class="text-center">
+                                <div class="text-8xl mb-4 animate-pulse">🚀</div>
+                                <div class="text-4xl font-bold logo-font tracking-widest neon-text">YOUR BRAND</div>
+                                <div class="text-4xl font-bold logo-font tracking-widest text-red-500">GOES VIRAL</div>
+                                <div class="text-xs mt-8 uppercase tracking-[4px] flex justify-center items-center gap-8">
+                                    <span class="flex items-center"><i class="fa-solid fa-circle-dot mr-1"></i> LIVE</span>
+                                    <span class="flex items-center"><i class="fa-solid fa-circle-dot mr-1"></i> 24.8K ENGAGED</span>
+                                    <span class="flex items-center"><i class="fa-solid fa-circle-dot mr-1"></i> 312% GROWTH</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating badges -->
+                    <div class="absolute -top-6 -left-6 bg-black border border-red-500 px-6 py-3 rounded-3xl text-sm font-medium flex items-center gap-2 shadow-2xl">
+                        <i class="fa-solid fa-globe text-red-500"></i>
+                        WEBSITE DEPLOYED IN 48H
+                    </div>
+                    <div class="absolute -bottom-6 right-8 bg-black border border-red-500 px-6 py-3 rounded-3xl text-sm font-medium flex items-center gap-2 shadow-2xl rotate-[-8deg]">
+                        <i class="fa-solid fa-chart-line text-red-500"></i>
+                        +480% TRAFFIC
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll prompt -->
+        <div class="absolute bottom-12 left-1/2 flex flex-col items-center text-red-400 text-xs tracking-widest">
+            <div class="mb-2">SCROLL FOR THE FUTURE</div>
+            <i class="fa-solid fa-chevron-down animate-bounce text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- ABOUT US -->
+    <section id="about" class="futuristic-section py-24 border-b border-red-500/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <div class="sticky top-28">
+                        <span class="px-4 py-1 bg-red-500/10 text-red-400 text-sm font-medium rounded-full">EST. 2023 • RANCHI, JHARKHAND</span>
+                        <h2 class="text-6xl font-bold logo-font leading-none mt-6 tracking-[-2px]">
+                            WE DON'T BUILD WEBSITES.<br>WE BUILD <span class="text-red-500">EMPIRES.</span>
+                        </h2>
+                        <p class="mt-8 text-xl text-gray-400 leading-relaxed">
+                            AKS ENTERPRISES is your one-stop cyber command center. From pixel-perfect websites for local shops to explosive digital ad campaigns that make competitors disappear, we deliver futuristic designs with ruthless marketing intelligence.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-zinc-900/70 border border-red-500/20 rounded-3xl p-8 card-hover">
+                            <i class="fa-solid fa-laptop-code text-6xl text-red-500 mb-6"></i>
+                            <h3 class="text-3xl font-semibold mb-2">Custom Websites</h3>
+                            <p class="text-gray-400">Lightning-fast, mobile-first sites for shops, restaurants, clinics &amp; any business ready to dominate online.</p>
+                        </div>
+                        <div class="bg-zinc-900/70 border border-red-500/20 rounded-3xl p-8 card-hover">
+                            <i class="fa-solid fa-ad text-6xl text-red-500 mb-6"></i>
+                            <h3 class="text-3xl font-semibold mb-2">Ad Campaigns</h3>
+                            <p class="text-gray-400">Scroll-stopping video ads, Instagram Reels, Google &amp; Meta ads engineered to convert cold traffic into loyal customers.</p>
+                        </div>
+                        <div class="bg-zinc-900/70 border border-red-500/20 rounded-3xl p-8 card-hover">
+                            <i class="fa-solid fa-bullseye text-6xl text-red-500 mb-6"></i>
+                            <h3 class="text-3xl font-semibold mb-2">Promotion Schemes</h3>
+                            <p class="text-gray-400">Data-driven tricks, SEO black-magic, viral loops &amp; growth hacks that 10x your reach in weeks.</p>
+                        </div>
+                        <div class="bg-zinc-900/70 border border-red-500/20 rounded-3xl p-8 card-hover">
+                            <i class="fa-solid fa-chart-bar text-6xl text-red-500 mb-6"></i>
+                            <h3 class="text-3xl font-semibold mb-2">Analytics &amp; Scale</h3>
+                            <p class="text-gray-400">Real-time dashboards + AI-powered insights so your business never stops growing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="futuristic-section py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-red-500 uppercase tracking-[3px] text-sm font-bold">SERVICES</span>
+                <h2 class="text-6xl font-bold logo-font mt-3">Built for the bold.</h2>
+                <p class="mt-4 max-w-md mx-auto text-xl text-gray-400">Pick your weapon. We deliver the future.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-zinc-900 rounded-3xl p-8 card-hover border border-transparent hover:border-red-500/50 group">
+                    <div class="h-2 w-16 bg-red-500 rounded-full mb-8 group-hover:w-24"></div>
+                    <h3 class="text-4xl font-semibold mb-4">Shop &amp; Business Websites</h3>
+                    <ul class="space-y-6 text-gray-300">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> Blazing-fast e-commerce stores</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> Booking &amp; appointment systems</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> Portfolio &amp; service showcases</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> WhatsApp + UPI integration</li>
+                    </ul>
+                    <div class="mt-12 text-red-500 font-medium flex items-center gap-2">Starting @ ₹29,999 <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-zinc-900 rounded-3xl p-8 card-hover border border-transparent hover:border-red-500/50 group relative">
+                    <div class="absolute top-8 right-8 text-xs bg-red-600 px-4 py-1 rounded-3xl">MOST POPULAR</div>
+                    <div class="h-2 w-16 bg-red-500 rounded-full mb-8 group-hover:w-24"></div>
+                    <h3 class="text-4xl font-semibold mb-4">Digital Advertisement Arsenal</h3>
+                    <ul class="space-y-6 text-gray-300">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> Meta + Google Ads (ROI guaranteed)</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> Viral Reels &amp; YouTube Shorts</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> Banner &amp; motion graphics</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-red-500 mt-1"></i> Influencer &amp; UGC campaigns</li>
+                    </ul>
+                    <div class="mt-12 text-red-500 font-medium flex items-center gap-2">Starting @ ₹15,000/month <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-zinc-900 rounded-3xl p-8 card-hover border border-transparent hover:border-red-500/50 group">
+                    <div class="h-2 w-16 bg-red-500 rounded-full mb-8 group-hover:w-24"></div>
+                    <h3 class="text-4xl font-semibold mb-4">Full Digital Transformation</h3>
+                    <p class="text-gray-400 leading-relaxed mb-8">Website + ads + branding + CRM + automated funnels. One package. Total domination.</p>
+                    <div class="text-5xl font-bold text-red-500 mb-8">ALL-IN-ONE</div>
+                    <div class="mt-auto pt-8 border-t border-red-500/20 text-sm uppercase font-medium">Perfect for ambitious brands ready to 10x in 90 days</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOTION SCHEMES &amp; TRICKS -->
+    <section id="promotions" class="futuristic-section py-24 bg-gradient-to-b from-black to-zinc-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-end mb-16">
+                <div class="flex-1">
+                    <span class="px-5 py-2 text-xs font-bold bg-red-600 text-white rounded-3xl">SECRET WEAPONS</span>
+                    <h2 class="text-6xl font-bold logo-font tracking-[-1px] mt-4">Promotion Schemes &amp; Tricks</h2>
+                    <p class="text-2xl text-gray-300 mt-6">We don’t just run ads — we engineer unstoppable growth loops.</p>
+                </div>
+                <a href="#contact" class="text-red-500 flex items-center gap-3 text-xl font-medium">
+                    APPLY THESE TRICKS TO YOUR BUSINESS 
+                    <span class="text-4xl">→</span>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-black/60 border border-red-500/30 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <i class="fa-solid fa-magnifying-glass text-6xl text-red-500"></i>
+                        <span class="text-xs bg-red-500/10 text-red-400 px-3 py-1 rounded-2xl">TRICK #01</span>
+                    </div>
+                    <h4 class="text-3xl font-semibold mt-8 mb-3">Hyper-Local SEO Domination</h4>
+                    <p class="text-gray-400">Rank #1 on Google in Ranchi + surrounding areas within 21 days. Includes GMB optimization, schema markup &amp; 100 backlinks.</p>
+                    <div class="mt-10 text-xs text-red-400 flex items-center gap-2"><span class="h-px flex-1 bg-red-400/30"></span> EXPECTED RESULT: 400% organic traffic <span class="h-px flex-1 bg-red-400/30"></span></div>
+                </div>
+                
+                <div class="bg-black/60 border border-red-500/30 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <i class="fa-solid fa-share-nodes text-6xl text-red-500"></i>
+                        <span class="text-xs bg-red-500/10 text-red-400 px-3 py-1 rounded-2xl">TRICK #02</span>
+                    </div>
+                    <h4 class="text-3xl font-semibold mt-8 mb-3">Viral Reels + WhatsApp Funnels</h4>
+                    <p class="text-gray-400">Create 15-second videos that get 100K+ views. Automated WhatsApp broadcast + abandoned-cart recovery = instant sales.</p>
+                    <div class="mt-10 text-xs text-red-400 flex items-center gap-2"><span class="h-px flex-1 bg-red-400/30"></span> EXPECTED RESULT: 8-12x ROAS <span class="h-px flex-1 bg-red-400/30"></span></div>
+                </div>
+                
+                <div class="bg-black/60 border border-red-500/30 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <i class="fa-solid fa-fire text-6xl text-red-500"></i>
+                        <span class="text-xs bg-red-500/10 text-red-400 px-3 py-1 rounded-2xl">TRICK #03</span>
+                    </div>
+                    <h4 class="text-3xl font-semibold mt-8 mb-3">Meta Advantage+ + Retargeting Loops</h4>
+                    <p class="text-gray-400">AI-powered ads that learn in real-time. We set up lookalike audiences + pixel events so your budget multiplies itself.</p>
+                    <div class="mt-10 text-xs text-red-400 flex items-center gap-2"><span class="h-px flex-1 bg-red-400/30"></span> EXPECTED RESULT: 3x cheaper leads <span class="h-px flex-1 bg-red-400/30"></span></div>
+                </div>
+                
+                <div class="bg-black/60 border border-red-500/30 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <i class="fa-solid fa-envelope text-6xl text-red-500"></i>
+                        <span class="text-xs bg-red-500/10 text-red-400 px-3 py-1 rounded-2xl">TRICK #04</span>
+                    </div>
+                    <h4 class="text-3xl font-semibold mt-8 mb-3">Email + SMS Blitz Campaigns</h4>
+                    <p class="text-gray-400">Abandoned cart sequences, win-back flows &amp; flash-sale SMS that convert 35%+ of your list.</p>
+                    <div class="mt-10 text-xs text-red-400 flex items-center gap-2"><span class="h-px flex-1 bg-red-400/30"></span> EXPECTED RESULT: ₹0 extra ad spend <span class="h-px flex-1 bg-red-400/30"></span></div>
+                </div>
+                
+                <div class="bg-black/60 border border-red-500/30 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <i class="fa-solid fa-users-rectangle text-6xl text-red-500"></i>
+                        <span class="text-xs bg-red-500/10 text-red-400 px-3 py-1 rounded-2xl">TRICK #05</span>
+                    </div>
+                    <h4 class="text-3xl font-semibold mt-8 mb-3">Micro-Influencer Takeover</h4>
+                    <p class="text-gray-400">Handpicked local creators in your niche who promote your brand to hyper-engaged audiences for pennies on the rupee.</p>
+                    <div class="mt-10 text-xs text-red-400 flex items-center gap-2"><span class="h-px flex-1 bg-red-400/30"></span> EXPECTED RESULT: 10K+ genuine followers <span class="h-px flex-1 bg-red-400/30"></span></div>
+                </div>
+                
+                <div class="bg-black/60 border border-red-500/30 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <i class="fa-solid fa-wand-magic-sparkles text-6xl text-red-500"></i>
+                        <span class="text-xs bg-red-500/10 text-red-400 px-3 py-1 rounded-2xl">BONUS TRICK</span>
+                    </div>
+                    <h4 class="text-3xl font-semibold mt-8 mb-3">A/B Testing War Room</h4>
+                    <p class="text-gray-400">We test 27 variations of every ad, landing page &amp; email until we find the one that prints money.</p>
+                    <div class="mt-auto pt-8 text-red-400 text-sm font-medium">Free for every client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="futuristic-section py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-red-500 text-sm font-bold uppercase">REAL RESULTS • REAL BRANDS</span>
+                <h2 class="text-6xl font-bold logo-font mt-4">Recent Cyber Victories</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group rounded-3xl overflow-hidden border border-red-500/10">
+                    <div class="h-64 bg-[radial-gradient(#ff0033_1px,#000_1px)] bg-[length:20px_20px] flex items-center justify-center relative">
+                        <div class="text-white text-5xl font-black logo-font rotate-[-12deg] group-hover:rotate-0">SHOPKARO</div>
+                        <div class="absolute bottom-4 right-4 bg-black/80 text-xs px-4 py-2 rounded-2xl">+620% sales in 45 days</div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-400">E-commerce website + Meta ad campaign for premium clothing boutique in Ranchi</p>
+                    </div>
+                </div>
+                <div class="group rounded-3xl overflow-hidden border border-red-500/10">
+                    <div class="h-64 bg-zinc-900 flex items-center justify-center">
+                        <div class="text-7xl">🏍️</div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-400">Bike repair booking portal + Google Ads for local service center</p>
+                        <div class="mt-4 text-xs text-red-500">42 bookings/week from zero</div>
+                    </div>
+                </div>
+                <div class="group rounded-3xl overflow-hidden border border-red-500/10">
+                    <div class="h-64 bg-gradient-to-br from-red-900 to-black flex items-center justify-center text-white text-center">
+                        <div>
+                            <div class="text-4xl mb-2">RESTAURANT</div>
+                            <div class="text-5xl font-black logo-font">X</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-400">Instagram Reels + online ordering system for rooftop café</p>
+                        <div class="mt-4 text-xs text-red-500">1.2M views • 380 tables booked</div>
+                    </div>
+                </div>
+                <div class="group rounded-3xl overflow-hidden border border-red-500/10">
+                    <div class="h-64 bg-black flex items-center justify-center border-4 border-red-500 rounded-3xl m-4">
+                        <div class="text-center">
+                            <i class="fa-solid fa-dumbbell text-8xl text-red-500"></i>
+                            <p class="mt-8 text-xl font-medium">GYM MEMBERSHIP</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-400">Membership portal + retargeting funnel = 87 new members in first month</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="bg-red-600 py-16 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-5xl font-bold logo-font text-white">Ready to launch your digital empire?</h2>
+            <p class="mt-6 text-2xl text-red-200">Book a 15-minute strategy call. We’ll show you exactly how we’ll 10x your business.</p>
+            <a href="#contact" class="mt-10 inline-block px-16 py-6 bg-white text-red-600 text-2xl font-bold rounded-3xl hover:scale-110">YES, LET’S BUILD THE FUTURE →</a>
+            <div class="text-xs text-red-200 mt-8">* Limited slots available this month</div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="futuristic-section py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12">
+                <div class="md:col-span-5">
+                    <h2 class="text-6xl font-bold logo-font">Let’s make your brand impossible to ignore.</h2>
+                    <div class="mt-10 space-y-6">
+                        <div class="flex gap-4">
+                            <i class="fa-solid fa-phone text-3xl text-red-500 mt-1"></i>
+                            <div>
+                                <div class="font-medium">+91 98765 43210</div>
+                                <div class="text-sm text-gray-400">Call or WhatsApp (Mon-Sun, 9AM-9PM)</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fa-solid fa-envelope text-3xl text-red-500 mt-1"></i>
+                            <div>
+                                <div class="font-medium">hello@aksenterprises.in</div>
+                                <div class="text-sm text-gray-400">We reply in under 60 minutes</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fa-solid fa-location-dot text-3xl text-red-500 mt-1"></i>
+                            <div>
+                                <div class="font-medium">Ranchi, Jharkhand, India</div>
+                                <div class="text-sm text-gray-400">We work with clients across India &amp; globe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <form id="contactForm" class="bg-zinc-900 rounded-3xl p-10 grid grid-cols-2 gap-8">
+                        <div class="col-span-2 md:col-span-1">
+                            <label class="text-xs uppercase tracking-widest block mb-2">Your Name</label>
+                            <input type="text" id="name" required class="w-full bg-black border border-red-500/30 focus:border-red-500 rounded-2xl px-6 py-5 outline-none">
+                        </div>
+                        <div class="col-span-2 md:col-span-1">
+                            <label class="text-xs uppercase tracking-widest block mb-2">Business Name</label>
+                            <input type="text" id="business" class="w-full bg-black border border-red-500/30 focus:border-red-500 rounded-2xl px-6 py-5 outline-none">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="text-xs uppercase tracking-widest block mb-2">Phone / WhatsApp</label>
+                            <input type="tel" id="phone" required class="w-full bg-black border border-red-500/30 focus:border-red-500 rounded-2xl px-6 py-5 outline-none">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="text-xs uppercase tracking-widest block mb-2">Tell us what you need</label>
+                            <textarea id="message" rows="5" class="w-full bg-black border border-red-500/30 focus:border-red-500 rounded-3xl px-6 py-5 outline-none" placeholder="Website + ad campaign for my shop..."></textarea>
+                        </div>
+                        <div class="col-span-2">
+                            <button type="submit" 
+                                    class="w-full py-7 bg-red-600 hover:bg-red-700 text-white text-xl font-semibold rounded-3xl flex items-center justify-center gap-4">
+                                SEND TO THE FUTURE
+                                <i class="fa-solid fa-rocket"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-red-500/20 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>© 2026 AKS ENTERPRISES • All Rights Reserved • Built with 🔥 &amp; futuristic code</div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-red-500">Instagram</a>
+                <a href="#" class="hover:text-red-500">LinkedIn</a>
+                <a href="#" class="hover:text-red-500">WhatsApp</a>
+            </div>
+            <div>Made for kings who want empires</div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script initialization
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        content: [],
+                        theme: {
+                            extend: {},
+                        },
+                        plugins: [],
+                        ...userConfig,
+                    }
+                },
+                theme: {
+                    extend: {},
+                },
+            }
+        }
+        const config = initializeTailwind()
+        document.documentElement.setAttribute('data-tailwind-config', JSON.stringify(config))
+
+        // Particle Canvas (futuristic neural network effect)
+        function createParticles() {
+            const canvas = document.getElementById('particleCanvas')
+            const ctx = canvas.getContext('2d')
+            
+            function resize() {
+                canvas.width = window.innerWidth
+                canvas.height = window.innerHeight
+            }
+            window.addEventListener('resize', resize)
+            resize()
+            
+            const particlesArray = []
+            const numberOfParticles = 120
+            
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width
+                    this.y = Math.random() * canvas.height
+                    this.size = Math.random() * 3 + 1
+                    this.speedX = Math.random() * 0.6 - 0.3
+                    this.speedY = Math.random() * 0.6 - 0.3
+                    this.color = '#ff0033'
+                }
+                update() {
+                    this.x += this.speedX
+                    this.y += this.speedY
+                    
+                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1
+                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1
+                }
+                draw() {
+                    ctx.fillStyle = this.color
+                    ctx.shadowBlur = 15
+                    ctx.shadowColor = '#ff0033'
+                    ctx.beginPath()
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+                    ctx.fill()
+                }
+            }
+            
+            function init() {
+                particlesArray.length = 0
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particlesArray.push(new Particle())
+                }
+            }
+            
+            function connectParticles() {
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        const dx = particlesArray[a].x - particlesArray[b].x
+                        const dy = particlesArray[a].y - particlesArray[b].y
+                        const distance = Math.sqrt(dx * dx + dy * dy)
+                        
+                        if (distance < 140) {
+                            ctx.strokeStyle = `rgba(255, 0, 51, ${1 - distance / 140})`
+                            ctx.lineWidth = 0.8
+                            ctx.shadowBlur = 8
+                            ctx.shadowColor = '#ff0033'
+                            ctx.beginPath()
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y)
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y)
+                            ctx.stroke()
+                        }
+                    }
+                }
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+                
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update()
+                    particlesArray[i].draw()
+                }
+                connectParticles()
+                requestAnimationFrame(animate)
+            }
+            
+            init()
+            animate()
+            
+            // Re-init on resize
+            window.addEventListener('resize', () => {
+                resize()
+                init()
+            })
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu')
+            menu.classList.toggle('hidden')
+        }
+        
+        // Fake form submission (you can connect to Formspree / EmailJS later)
+        function handleForm() {
+            const form = document.getElementById('contactForm')
+            form.addEventListener('submit', function(e) {
+                e.preventDefault()
+                
+                const btn = form.querySelector('button')
+                const originalText = btn.innerHTML
+                
+                btn.innerHTML = `
+                    <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                    </svg>
+                `
+                setTimeout(() => {
+                    alert('🚀 Message received! Our cyber team will contact you within 60 minutes.')
+                    form.reset()
+                    btn.innerHTML = originalText
+                }, 1800)
+            })
+        }
+        
+        // Initialize everything when page loads
+        window.onload = function() {
+            createParticles()
+            handleForm()
+            
+            console.log('%c🚀 AKS ENTERPRISES website ready. Futuristic mode: ON', 'color:#ff0033; font-family:monospace; font-size:14px')
+        }
+    </script>
+</body>
+</html>
