@@ -65,8 +65,8 @@
 </head>
 <body class="bg-black text-white overflow-x-hidden">
 
-    <!-- SOLID PREMIUM NAVBAR -->
-    <nav class="fixed top-0 z-50 w-full border-b-2 border-red-500" aria-label="Main navigation">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 z-50 w-full border-b-2 border-red-500">
         <div class="max-w-7xl mx-auto px-5 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-12 h-12 bg-gradient-to-br from-red-600 via-pink-500 to-red-500 rounded-3xl flex items-center justify-center rotate-45 shadow-2xl shadow-red-600/90 akspulse">
@@ -89,15 +89,15 @@
                 <i class="fa-solid fa-rocket"></i> GET QUOTE
             </a>
 
-            <button onclick="toggleMobileMenu()" class="md:hidden text-4xl text-red-400 hover:text-white" aria-label="Open menu">
+            <button onclick="toggleMobileMenu()" class="md:hidden text-4xl text-red-400 hover:text-white">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </nav>
 
-    <!-- MOBILE MENU -->
+   <!-- MOBILE MENU -->
     <div id="mobileMenu" class="hidden fixed inset-0 bg-black/98 z-[9999] flex flex-col pt-24 px-8">
-        <button onclick="toggleMobileMenu()" class="absolute top-8 right-8 text-5xl text-red-400" aria-label="Close menu">✕</button>
+        <button onclick="toggleMobileMenu()" class="absolute top-8 right-8 text-5xl text-red-400">✕</button>
         <div class="flex flex-col gap-8 text-3xl font-medium uppercase tracking-widest">
             <a href="#services" onclick="toggleMobileMenu()" class="py-5 hover:text-red-400">SERVICES</a>
             <a href="#promotions" onclick="toggleMobileMenu()" class="py-5 hover:text-red-400">PROMO TRICKS</a>
@@ -109,7 +109,7 @@
         </a>
     </div>
 
-    <!-- HERO -->
+   <!-- HERO -->
     <header id="home" class="hero-bg min-h-screen flex items-center relative pt-20">
         <canvas id="particleCanvas" class="absolute inset-0 hidden xl:block pointer-events-none z-0"></canvas>
 
@@ -145,7 +145,6 @@
             </div>
         </div>
     </header>
-
     <!-- SERVICES -->
     <main>
         <section id="services" class="py-20 bg-zinc-950">
@@ -219,28 +218,42 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="py-20">
-            <div class="max-w-7xl mx-auto px-5">
-                <h2 class="text-4xl sm:text-5xl font-bold logo-font text-center mb-12">Ready to build your neon empire?</h2>
-                <form id="contactForm" class="glass max-w-2xl mx-auto p-10 rounded-3xl">
-                    <div class="space-y-8">
-                        <div><label class="block text-sm mb-2">Your Name</label>
-                            <input type="text" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500" required></div>
-                        <div><label class="block text-sm mb-2">Business Name</label>
-                            <input type="text" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500"></div>
-                        <div><label class="block text-sm mb-2">Phone / WhatsApp</label>
-                            <input type="tel" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500" required></div>
-                        <div><label class="block text-sm mb-2">Tell us your vision</label>
-                            <textarea rows="4" class="w-full bg-black/70 border border-red-500/40 rounded-3xl px-6 py-5 focus:border-red-500" placeholder="I need a modern website with Instagram ads..."></textarea></div>
+       <!-- CONTACT FORM - NOW FUNCTIONAL -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-5">
+            <h2 class="text-4xl sm:text-5xl font-bold logo-font text-center mb-12">Ready to build your neon empire?</h2>
+            
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="glass max-w-2xl mx-auto p-10 rounded-3xl">
+                <!-- Hidden fields for Web3Forms -->
+                <input type="hidden" name="access_key" value="4ff27b43-d180-4bfc-be37-7d115915101c"> <!-- ← REPLACE THIS -->
+                <input type="hidden" name="subject" value="New Inquiry from AKS Enterprises Website">
+                <input type="hidden" name="from_name" value="AKS Enterprises Website">
+                <input type="hidden" name="redirect" value="https://yourusername.github.io/thanks.html"> <!-- Optional thank you page -->
+
+                <div class="space-y-8">
+                    <div>
+                        <label class="block text-sm mb-2">Your Name</label>
+                        <input type="text" name="name" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500" required>
                     </div>
-                    <button type="submit" class="mt-12 w-full py-7 bg-gradient-to-r from-red-600 to-pink-600 text-xl font-bold rounded-3xl hover:brightness-110">
-                        Enroll Now
-                    </button>
-                </form>
-            </div>
-        </section>
-    </main>
+                    <div>
+                        <label class="block text-sm mb-2">Business Name</label>
+                        <input type="text" name="business" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Phone / WhatsApp</label>
+                        <input type="tel" name="phone" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Tell us your vision</label>
+                        <textarea name="message" rows="4" class="w-full bg-black/70 border border-red-500/40 rounded-3xl px-6 py-5 focus:border-red-500" placeholder="I need a modern website with Instagram ads..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="mt-12 w-full py-7 bg-gradient-to-r from-red-600 to-pink-600 text-xl font-bold rounded-3xl hover:brightness-110">
+                    Enroll Now
+                </button>
+            </form>
+        </div>
+    </section>
 
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/919122630105" target="_blank" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-3xl flex items-center justify-center text-4xl shadow-2xl shadow-green-600/50 z-[9999] hover:scale-110 transition-transform" aria-label="Chat on WhatsApp">
