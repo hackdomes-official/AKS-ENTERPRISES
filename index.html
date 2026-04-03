@@ -1,311 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    
-    <!-- Advanced SEO Meta Tags -->
-    <title>AKS ENTERPRISES | Best Website Development & Digital Marketing in Ranchi</title>
-    <meta name="description" content="AKS ENTERPRISES Ranchi - Expert website development for shops & businesses + high-ROI digital advertising and promotion strategies. Get a futuristic website and grow your business fast.">
-    <meta name="keywords" content="website development ranchi, digital marketing ranchi, seo ranchi, website designer ranchi, ad campaigns ranchi, aks enterprises">
-    <meta name="author" content="AKS ENTERPRISES">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://yourusername.github.io/">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="AKS ENTERPRISES | Futuristic Websites & Digital Marketing in Ranchi">
-    <meta property="og:description" content="Premium website development and powerful ad campaigns for shops and businesses in Ranchi. Turn your business into a digital empire.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourusername.github.io/">
-    <meta property="og:image" content="https://yourusername.github.io/og-image.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AKS ENTERPRISES | Best Website & Digital Marketing Ranchi">
-    <meta name="twitter:description" content="Futuristic websites and high-converting ad campaigns in Ranchi.">
-
-    <!-- Favicon & Theme -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚡</text></svg>">
-    <meta name="theme-color" content="#ff0033">
-
+    <title>AKS ENTERPRISES | Royal Luxury Digital Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
-        .logo-font { font-family: 'Space Grotesk', sans-serif; }
-        .hero-bg { background: radial-gradient(circle at center, #2a0000 0%, #000000 70%); }
-        .neon-text { text-shadow: 0 0 15px #ff0033, 0 0 30px #ff0033, 0 0 60px #ff3366; }
-
-        .akspulse {
-            animation: akspulse 2.5s ease-in-out infinite;
+        :root {
+            --navy: #0a2f1f;
+            --emerald: #10b981;
+            --gold: #d4af77;
         }
-        @keyframes akspulse {
-            0%, 100% { text-shadow: 0 0 15px #ff0033, 0 0 30px #ff0033; }
-            50% { text-shadow: 0 0 25px #ff0033, 0 0 50px #ff6699, 0 0 80px #ff3366; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a2f1f 0%, #02180f 100%);
         }
 
         .glass {
-            background: rgba(20, 0, 8, 0.92);
+            background: rgba(10, 47, 31, 0.88);
             backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 51, 102, 0.4);
+            border: 1px solid rgba(16, 185, 129, 0.4);
         }
 
-        .hover-glow:hover {
-            box-shadow: 0 0 50px rgba(255, 0, 51, 0.9);
-            transform: translateY(-8px);
+        /* Glitch Effect on Company Name */
+        .glitch {
+            animation: glitch 1.2s linear infinite alternate;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 #10b981, -2px 0 #d4af77; }
+            100% { text-shadow: -2px 0 #10b981, 2px 0 #d4af77; }
         }
 
-        nav {
-            background: #000000;
-            box-shadow: 0 10px 30px -10px rgba(255, 0, 51, 0.6);
+        /* Typing Effect */
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #10b981;
+            animation: typing 3.5s steps(35, end) forwards, blink 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-luxury:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 60px -15px rgba(16, 185, 129, 0.5);
         }
     </style>
 </head>
-<body class="bg-black text-white overflow-x-hidden">
+<body class="bg-[#02180f] text-white overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav class="fixed top-0 z-50 w-full border-b-2 border-red-500">
-        <div class="max-w-7xl mx-auto px-5 py-5 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-gradient-to-br from-red-600 via-pink-500 to-red-500 rounded-3xl flex items-center justify-center rotate-45 shadow-2xl shadow-red-600/90 akspulse">
-                    <span class="text-white text-4xl font-black rotate-[-45deg]">AKS</span>
+    <nav class="fixed top-0 z-50 w-full border-b border-[#10b981]/30 bg-[#0a2f1f]">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-11 h-11 bg-gradient-to-br from-[#10b981] to-[#0a2f1f] rounded-3xl flex items-center justify-center rotate-45 shadow-2xl">
+                    <span class="text-white text-4xl font-bold rotate-[-45deg]">AKS</span>
                 </div>
                 <div class="leading-none">
-                    <div class="logo-font text-3xl sm:text-4xl tracking-[-2.5px] neon-text akspulse">AKS</div>
-                    <div class="text-xs font-medium tracking-[4px] text-red-400">ENTERPRISES</div>
+                    <div class="logo-font text-3xl tracking-[-2px] text-white">AKS</div>
+                    <div class="text-[#10b981] text-sm tracking-[3px] font-medium -mt-1">ENTERPRISES</div>
                 </div>
             </div>
 
             <div class="hidden md:flex items-center gap-10 text-sm font-medium uppercase tracking-widest">
-                <a href="#services" class="nav-link hover:text-red-400">SERVICES</a>
-                <a href="#promotions" class="nav-link hover:text-red-400">PROMO TRICKS</a>
-                <a href="#portfolio" class="nav-link hover:text-red-400">WORK</a>
-                <a href="#contact" class="nav-link hover:text-red-400">CONTACT</a>
+                <a href="#home" class="hover:text-[#10b981]">HOME</a>
+                <a href="#about" class="hover:text-[#10b981]">ABOUT</a>
+                <a href="#services" class="hover:text-[#10b981]">SERVICES</a>
+                <a href="#strategies" class="hover:text-[#10b981]">STRATEGIES</a>
+                <a href="#portfolio" class="hover:text-[#10b981]">WORK</a>
+                <a href="#contact" class="hover:text-[#10b981]">CONTACT</a>
             </div>
 
-            <a href="#contact" class="hidden md:flex px-8 py-4 bg-red-600 hover:bg-white hover:text-red-600 font-bold rounded-3xl items-center gap-3 text-sm transition-all">
-                <i class="fa-solid fa-rocket"></i> GET QUOTE
+            <a href="#contact" class="hidden md:flex px-8 py-4 bg-[#10b981] hover:bg-white text-[#02180f] font-bold rounded-3xl items-center gap-3 transition-all">
+                <i class="fa-solid fa-crown"></i> ROYAL CONSULTATION
             </a>
 
-            <button onclick="toggleMobileMenu()" class="md:hidden text-4xl text-red-400 hover:text-white">
+            <button onclick="toggleMobileMenu()" class="md:hidden text-4xl text-[#10b981]">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </nav>
 
-   <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden fixed inset-0 bg-black/98 z-[9999] flex flex-col pt-24 px-8">
-        <button onclick="toggleMobileMenu()" class="absolute top-8 right-8 text-5xl text-red-400">✕</button>
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden fixed inset-0 bg-[#0a2f1f] z-[9999] flex flex-col pt-24 px-8">
+        <button onclick="toggleMobileMenu()" class="absolute top-8 right-8 text-5xl text-[#10b981]">✕</button>
         <div class="flex flex-col gap-8 text-3xl font-medium uppercase tracking-widest">
-            <a href="#services" onclick="toggleMobileMenu()" class="py-5 hover:text-red-400">SERVICES</a>
-            <a href="#promotions" onclick="toggleMobileMenu()" class="py-5 hover:text-red-400">PROMO TRICKS</a>
-            <a href="#portfolio" onclick="toggleMobileMenu()" class="py-5 hover:text-red-400">OUR WORK</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="py-5 hover:text-red-400">CONTACT</a>
+            <a href="#home" onclick="toggleMobileMenu()" class="py-5 hover:text-[#10b981]">HOME</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="py-5 hover:text-[#10b981]">ABOUT</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="py-5 hover:text-[#10b981]">SERVICES</a>
+            <a href="#strategies" onclick="toggleMobileMenu()" class="py-5 hover:text-[#10b981]">STRATEGIES</a>
+            <a href="#portfolio" onclick="toggleMobileMenu()" class="py-5 hover:text-[#10b981]">WORK</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="py-5 hover:text-[#10b981]">CONTACT</a>
         </div>
-        <a href="#contact" onclick="toggleMobileMenu()" class="mt-auto py-7 bg-gradient-to-r from-red-600 to-pink-600 text-center text-2xl font-bold rounded-3xl flex items-center justify-center gap-3">
-            <i class="fa-solid fa-paper-plane"></i> START PROJECT
-        </a>
     </div>
 
-   <!-- HERO -->
-    <header id="home" class="hero-bg min-h-screen flex items-center relative pt-20">
-        <canvas id="particleCanvas" class="absolute inset-0 hidden xl:block pointer-events-none z-0"></canvas>
+    <!-- HERO - Company Name Centered, Smaller, Glitch + Typing Headline -->
+    <header id="home" class="hero-bg min-h-screen flex items-center relative pt-20 overflow-hidden">
+        <canvas id="particleCanvas" class="absolute inset-0 hidden lg:block pointer-events-none z-10"></canvas>
 
-        <div class="max-w-7xl mx-auto px-5 relative z-10 w-full">
-            <div class="flex flex-col items-center text-center gap-10 min-h-[85vh] justify-center">
+        <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
+            <div class="flex flex-col items-center text-center gap-12 min-h-[85vh] justify-center">
+
+                <!-- Centered Company Name (slightly smaller) -->
                 <div class="flex flex-col items-center mb-6">
-                    <div class="flex items-center gap-5">
-                        <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-pink-500 rounded-3xl flex items-center justify-center rotate-45 shadow-2xl shadow-red-600/90 akspulse">
-                            <span class="text-white text-5xl font-black rotate-[-45deg]">AKS</span>
+                    <div class="flex items-center gap-5 mb-3">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#10b981] to-[#0a2f1f] rounded-3xl flex items-center justify-center rotate-45 shadow-2xl">
+                            <span class="text-white text-5xl font-bold rotate-[-45deg]">AKS</span>
                         </div>
-                        <div class="logo-font text-8xl sm:text-9xl tracking-[-5px] neon-text akspulse leading-none">AKS</div>
                     </div>
-                    <div class="text-3xl font-medium tracking-[8px] text-red-400 -mt-4">ENTERPRISES</div>
+                    <div class="glitch logo-font text-6xl sm:text-7xl tracking-[-4px] text-white">AKS</div>
+                    <div class="text-3xl font-medium tracking-[8px] text-[#10b981] -mt-2">ENTERPRISES</div>
                 </div>
 
-                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black logo-font leading-none tracking-[-3px] neon-text max-w-2xl">
-                    WE BUILD THE FUTURE<br>FOR YOUR BUSINESS
+                <!-- Typing Effect Headline -->
+                <h1 class="typing text-5xl sm:text-6xl md:text-7xl font-bold logo-font leading-none tracking-[-3px] text-white max-w-3xl mx-auto">
+                    WE CRAFT ROYAL EMPIRES
                 </h1>
 
-                <p class="text-xl md:text-2xl text-gray-300 max-w-md px-4">
-                    Futuristic websites + powerful digital marketing that turns your local shop into a neon empire.
+                <p class="text-xl md:text-2xl text-gray-300 max-w-lg mt-6">
+                    Premium website development • Strategic digital marketing • Futuristic promotion solutions for visionary businesses.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-5 w-full max-w-xs sm:max-w-md">
-                    <a href="#services" class="px-12 py-7 bg-red-600 hover:bg-white hover:text-red-600 font-bold text-xl rounded-3xl flex items-center justify-center gap-4 transition-all">
-                        EXPLORE SERVICES
+                <div class="flex flex-col sm:flex-row gap-5 w-full max-w-xs sm:max-w-md mt-8">
+                    <a href="#services" class="px-12 py-7 bg-[#10b981] hover:bg-white text-[#02180f] font-bold text-xl rounded-3xl flex items-center justify-center gap-4 transition-all">
+                        DISCOVER SERVICES
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="#promotions" class="px-12 py-7 border-2 border-red-500 hover:bg-red-500/10 font-bold text-xl rounded-3xl transition-all">
-                        VIEW TRICKS
+                    <a href="#contact" class="px-12 py-7 border-2 border-[#10b981] hover:bg-[#10b981]/10 font-bold text-xl rounded-3xl transition-all">
+                        BEGIN YOUR JOURNEY
                     </a>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- ABOUT US -->
+    <section id="about" class="py-24 bg-white text-[#0a2f1f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="text-5xl font-bold logo-font leading-none">About AKS Enterprises</h2>
+                    <p class="text-[#10b981] text-2xl mt-6">Ranchi, Jharkhand • Since 2023</p>
+                </div>
+                <div class="md:col-span-7 text-lg leading-relaxed text-gray-700">
+                    <p class="mb-6">
+                        AKS Enterprises is a distinguished digital solutions company based in Ranchi, Jharkhand. We specialize in creating premium websites and implementing sophisticated digital marketing strategies for businesses that seek excellence and long-term growth.
+                    </p>
+                    <p>
+                        Our philosophy is rooted in royal standards of quality, precision, and elegance. We craft digital legacies that reflect the prestige and ambition of our clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SERVICES -->
-    <main>
-        <section id="services" class="py-20 bg-zinc-950">
-            <div class="max-w-7xl mx-auto px-5">
-                <h2 class="text-4xl sm:text-5xl font-bold logo-font text-center mb-12">Our Digital Arsenal</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass hover-glow rounded-3xl p-10 text-center">
-                        <div class="text-6xl mb-6">🌐</div>
-                        <h3 class="text-2xl font-semibold mb-3">Custom Websites</h3>
-                        <p class="text-gray-400">Lightning-fast, mobile-first websites with modern animations for shops, restaurants, clinics & businesses.</p>
-                        <div class="mt-8 text-red-400 font-medium">Starting ₹29,999</div>
+    <section id="services" class="py-24 bg-[#0a2f1f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold logo-font text-center mb-16 text-white">Our Royal Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass hover-luxury rounded-3xl p-10">
+                    <div class="text-6xl mb-6">🌐</div>
+                    <h3 class="text-3xl font-semibold mb-4 text-white">Premium Website Development</h3>
+                    <p class="text-gray-300">Bespoke, mobile-first websites with elegant design, lightning speed, and powerful conversion features.</p>
+                    <ul class="mt-8 space-y-3 text-gray-300 text-sm">
+                        <li>• E-commerce platforms</li>
+                        <li>• Service booking systems</li>
+                        <li>• Corporate & portfolio sites</li>
+                        <li>• WhatsApp & UPI integration</li>
+                    </ul>
+                    <div class="mt-10 text-[#10b981] font-medium">Starting ₹49,999</div>
+                </div>
+                <div class="glass hover-luxury rounded-3xl p-10">
+                    <div class="text-6xl mb-6">📣</div>
+                    <h3 class="text-3xl font-semibold mb-4 text-white">Strategic Digital Marketing</h3>
+                    <p class="text-gray-300">High-impact campaigns across Meta, Google, and Instagram that deliver measurable growth.</p>
+                    <ul class="mt-8 space-y-3 text-gray-300 text-sm">
+                        <li>• High-ROI ad campaigns</li>
+                        <li>• Social media management</li>
+                        <li>• Influencer collaborations</li>
+                        <li>• Content & reel production</li>
+                    </ul>
+                    <div class="mt-10 text-[#10b981] font-medium">Starting ₹25,000/month</div>
+                </div>
+                <div class="glass hover-luxury rounded-3xl p-10">
+                    <div class="text-6xl mb-6">📈</div>
+                    <h3 class="text-3xl font-semibold mb-4 text-white">Brand Empire Building</h3>
+                    <p class="text-gray-300">End-to-end digital transformation including branding, SEO, automation, and long-term growth strategies.</p>
+                    <div class="mt-10 text-[#10b981] font-medium">Luxury Package</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GROWTH STRATEGIES -->
+    <section id="strategies" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold logo-font text-center mb-16 text-white">Royal Growth Strategies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass hover-luxury p-10 rounded-3xl text-center">
+                    <i class="fa-solid fa-magnifying-glass text-6xl text-[#10b981] mb-6"></i>
+                    <h4 class="text-2xl font-semibold mb-3">Authority SEO</h4>
+                    <p class="text-gray-300 mt-4">Position your brand at the top of search results with premium SEO.</p>
+                </div>
+                <div class="glass hover-luxury p-10 rounded-3xl text-center">
+                    <i class="fa-solid fa-video text-6xl text-[#10b981] mb-6"></i>
+                    <h4 class="text-2xl font-semibold mb-3">Luxury Content Marketing</h4>
+                    <p class="text-gray-300 mt-4">Sophisticated visual storytelling that builds desire and trust.</p>
+                </div>
+                <div class="glass hover-luxury p-10 rounded-3xl text-center">
+                    <i class="fa-solid fa-chart-line text-6xl text-[#10b981] mb-6"></i>
+                    <h4 class="text-2xl font-semibold mb-3">Elite Advertising</h4>
+                    <p class="text-gray-300 mt-4">Precision-targeted campaigns for high-value clientele.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-24 bg-[#0a2f1f]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold logo-font text-center mb-16 text-white">Our Distinguished Creations</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass hover-luxury rounded-3xl overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-[#10b981] to-[#0a2f1f] flex items-center justify-center text-8xl">👑</div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-xl">Luxury Fashion House</h4>
+                        <p class="text-[#10b981]">Premium e-commerce platform with 680% sales growth</p>
                     </div>
-                    <div class="glass hover-glow rounded-3xl p-10 text-center">
-                        <div class="text-6xl mb-6">🔥</div>
-                        <h3 class="text-2xl font-semibold mb-3">Ad Campaigns</h3>
-                        <p class="text-gray-400">High-ROI Meta, Google & Instagram ads engineered to explode your sales and reach.</p>
-                        <div class="mt-8 text-red-400 font-medium">Starting ₹15,000/month</div>
+                </div>
+                <div class="glass hover-luxury rounded-3xl overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-[#10b981] to-[#0a2f1f] flex items-center justify-center text-8xl">🏛️</div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-xl">Heritage Hotel Group</h4>
+                        <p class="text-[#10b981]">Elegant booking system and digital branding</p>
                     </div>
-                    <div class="glass hover-glow rounded-3xl p-10 text-center">
-                        <div class="text-6xl mb-6">📈</div>
-                        <h3 class="text-2xl font-semibold mb-3">Full Empire Package</h3>
-                        <p class="text-gray-400">Website + SEO + Ads + WhatsApp Automation = Complete digital domination in 90 days.</p>
-                        <div class="mt-8 text-red-400 font-medium">10× Your Business</div>
+                </div>
+                <div class="glass hover-luxury rounded-3xl overflow-hidden">
+                    <div class="h-64 bg-gradient-to-br from-[#10b981] to-[#0a2f1f] flex items-center justify-center text-8xl">💼</div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-xl">Corporate Conglomerate</h4>
+                        <p class="text-[#10b981]">Full digital transformation project</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PROMOTIONS -->
-        <section id="promotions" class="py-20">
-            <div class="max-w-7xl mx-auto px-5">
-                <h2 class="text-4xl sm:text-5xl font-bold logo-font text-center mb-12">Promotion Tricks That Conquer</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass hover-glow p-10 rounded-3xl text-center">
-                        <i class="fa-solid fa-magnifying-glass text-6xl text-red-500 mb-6"></i>
-                        <h4 class="text-2xl font-semibold">Hyper Local SEO</h4>
-                        <p class="text-gray-400 mt-4">Rank #1 in Ranchi and surrounding areas within weeks.</p>
-                    </div>
-                    <div class="glass hover-glow p-10 rounded-3xl text-center">
-                        <i class="fa-solid fa-video text-6xl text-red-500 mb-6"></i>
-                        <h4 class="text-2xl font-semibold">Viral Reels & Shorts</h4>
-                        <p class="text-gray-400 mt-4">Create videos that stop the scroll and drive sales.</p>
-                    </div>
-                    <div class="glass hover-glow p-10 rounded-3xl text-center">
-                        <i class="fa-solid fa-chart-line text-6xl text-red-500 mb-6"></i>
-                        <h4 class="text-2xl font-semibold">Precision Retargeting</h4>
-                        <p class="text-gray-400 mt-4">Turn cold traffic into loyal paying customers.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO -->
-        <section id="portfolio" class="py-20 bg-zinc-950">
-            <div class="max-w-7xl mx-auto px-5">
-                <h2 class="text-4xl sm:text-5xl font-bold logo-font text-center mb-12">Recent Empire Builds</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="glass hover-glow rounded-3xl overflow-hidden">
-                        <div class="h-52 bg-gradient-to-br from-red-800 to-black flex items-center justify-center text-7xl">🛍️</div>
-                        <div class="p-6"><h4 class="font-semibold">Clothing Boutique</h4><p class="text-red-400">+680% sales in 60 days</p></div>
-                    </div>
-                    <div class="glass hover-glow rounded-3xl overflow-hidden">
-                        <div class="h-52 bg-gradient-to-br from-red-800 to-black flex items-center justify-center text-7xl">🏍️</div>
-                        <div class="p-6"><h4 class="font-semibold">Bike Repair Center</h4><p class="text-red-400">42 bookings per week</p></div>
-                    </div>
-                    <div class="glass hover-glow rounded-3xl overflow-hidden">
-                        <div class="h-52 bg-gradient-to-br from-red-800 to-black flex items-center justify-center text-7xl">🍽️</div>
-                        <div class="p-6"><h4 class="font-semibold">Rooftop Cafe</h4><p class="text-red-400">1.4M reel views</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       <!-- CONTACT FORM - NOW FUNCTIONAL -->
-    <section id="contact" class="py-20">
-        <div class="max-w-7xl mx-auto px-5">
-            <h2 class="text-4xl sm:text-5xl font-bold logo-font text-center mb-12">Ready to Grow your Empire?</h2>
-            
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="glass max-w-2xl mx-auto p-10 rounded-3xl">
-                <!-- Hidden fields for Web3Forms -->
-                <input type="hidden" name="access_key" value="4ff27b43-d180-4bfc-be37-7d115915101c"> <!-- ← REPLACE THIS -->
-                <input type="hidden" name="subject" value="New Inquiry from AKS Enterprises Website">
-                <input type="hidden" name="from_name" value="AKS Enterprises Website">
-                <input type="hidden" name="redirect" value="https://yourusername.github.io/thanks.html"> <!-- Optional thank you page -->
-
+    <!-- CONTACT -->
+    <section id="contact" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold logo-font text-center mb-12 text-white">Begin Your Royal Journey</h2>
+            <form id="contactForm" class="glass max-w-2xl mx-auto p-12 rounded-3xl">
                 <div class="space-y-8">
-                    <div>
-                        <label class="block text-sm mb-2">Your Name</label>
-                        <input type="text" name="name" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm mb-2">Business Name</label>
-                        <input type="text" name="business" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm mb-2">Phone / WhatsApp</label>
-                        <input type="tel" name="phone" class="w-full bg-black/70 border border-red-500/40 rounded-2xl px-6 py-5 focus:border-red-500" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm mb-2">Tell us your vision</label>
-                        <textarea name="message" rows="4" class="w-full bg-black/70 border border-red-500/40 rounded-3xl px-6 py-5 focus:border-red-500" placeholder="I need a modern website with Instagram ads..." required></textarea>
-                    </div>
+                    <div><label class="block text-sm mb-2">Your Name</label>
+                        <input type="text" class="w-full bg-black/70 border border-[#10b981]/40 rounded-2xl px-6 py-5 focus:border-[#10b981]" required></div>
+                    <div><label class="block text-sm mb-2">Business Name</label>
+                        <input type="text" class="w-full bg-black/70 border border-[#10b981]/40 rounded-2xl px-6 py-5 focus:border-[#10b981]"></div>
+                    <div><label class="block text-sm mb-2">Phone / WhatsApp</label>
+                        <input type="tel" class="w-full bg-black/70 border border-[#10b981]/40 rounded-2xl px-6 py-5 focus:border-[#10b981]" required></div>
+                    <div><label class="block text-sm mb-2">Your Vision</label>
+                        <textarea rows="5" class="w-full bg-black/70 border border-[#10b981]/40 rounded-3xl px-6 py-5 focus:border-[#10b981]" placeholder="Describe your business and what you need..."></textarea></div>
                 </div>
-                <button type="submit" class="mt-12 w-full py-7 bg-gradient-to-r from-red-600 to-pink-600 text-xl font-bold rounded-3xl hover:brightness-110">
-                    Enroll Now
+                <button type="submit" class="mt-12 w-full py-7 bg-[#10b981] text-[#0a2f1f] text-xl font-bold rounded-3xl hover:brightness-110">
+                    SEND YOUR INQUIRY
                 </button>
             </form>
         </div>
     </section>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/919122630105" target="_blank" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-3xl flex items-center justify-center text-4xl shadow-2xl shadow-green-600/50 z-[9999] hover:scale-110 transition-transform" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919122630105" target="_blank" class="fixed bottom-6 right-6 bg-[#10b981] w-16 h-16 rounded-3xl flex items-center justify-center text-4xl text-[#0a2f1f] shadow-2xl z-[9999] hover:scale-110 transition-transform">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <footer class="py-12 text-center text-gray-500 text-sm border-t border-red-500/20">
-        <div class="max-w-7xl mx-auto px-5">
-            © 2026 AKS ENTERPRISES • Ranchi, Jharkhand • All Rights Reserved<br>
-            <span class="text-xs">Best Website Development & Digital Marketing Company in Ranchi</span>
-        </div>
+    <footer class="py-12 text-center text-gray-400 text-sm border-t border-[#10b981]/20">
+        © 2026 AKS ENTERPRISES • Ranchi, Jharkhand • Crafted with Royal Excellence
     </footer>
 
-    <!-- Structured Data (JSON-LD) for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "AKS ENTERPRISES",
-      "description": "Premium website development and digital marketing company in Ranchi",
-      "url": "https://yourusername.github.io/",
-      "telephone": "+91 91226 30105",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ranchi",
-        "addressRegion": "Jharkhand",
-        "addressCountry": "IN"
-      },
-      "openingHours": "Mo-Su 09:00-21:00",
-      "priceRange": "₹₹",
-      "serviceType": ["Website Development", "Digital Marketing", "SEO", "Social Media Advertising"]
-    }
-    </script>
-
     <script>
+        // Lightweight elegant emerald particle system
         function createParticles() {
             const canvas = document.getElementById('particleCanvas');
-            if (!canvas || window.innerWidth < 1280) return;
+            if (!canvas || window.innerWidth < 1024) return;
+
             const ctx = canvas.getContext('2d');
             let w = canvas.width = window.innerWidth;
             let h = canvas.height = window.innerHeight;
-            window.addEventListener('resize', () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
+
+            window.addEventListener('resize', () => {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            });
+
             const particles = [];
-            for (let i = 0; i < 85; i++) particles.push({x: Math.random()*w, y: Math.random()*h, size: Math.random()*3+1, speedX: Math.random()*0.7-0.35, speedY: Math.random()*0.7-0.35});
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    size: Math.random() * 2.2 + 0.8,
+                    speedX: Math.random() * 0.5 - 0.25,
+                    speedY: Math.random() * 0.5 - 0.25
+                });
+            }
+
             function animate() {
-                ctx.fillStyle = 'rgba(0,0,0,0.15)'; ctx.fillRect(0,0,w,h);
+                ctx.fillStyle = 'rgba(10, 47, 31, 0.12)';
+                ctx.fillRect(0, 0, w, h);
+
                 for (let p of particles) {
-                    p.x += p.speedX; p.y += p.speedY;
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+
                     if (p.x < 0 || p.x > w) p.speedX *= -1;
                     if (p.y < 0 || p.y > h) p.speedY *= -1;
-                    ctx.fillStyle = '#ff6699'; ctx.shadowBlur = 15; ctx.shadowColor = '#ff0033';
-                    ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = '#10b981';
+                    ctx.fillStyle = '#10b981';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
                 }
                 requestAnimationFrame(animate);
             }
@@ -320,14 +361,24 @@
 
         window.onload = function() {
             createParticles();
+
             const form = document.getElementById('contactForm');
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    alert('🚀 Thank you! AKS ENTERPRISES team will contact you shortly via call or WhatsApp.');
+                    alert('Thank you! Your royal inquiry has been received. AKS ENTERPRISES will contact you shortly.');
                     form.reset();
                 });
             }
+
+            // Scroll fade-in
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
         };
     </script>
 </body>
